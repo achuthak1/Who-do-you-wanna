@@ -3,22 +3,22 @@ import styles from "../styles/battle.module.css";
 import Link from 'next/link';
 
 const ACTORS_DATA = [
-  { name: 'Rajinikanth', image: 'https://i.pinimg.com/474x/a1/b2/c3/a1b2c3a1b2c3a1b2c3a1b2c3a1b2c3.jpg' },
-  { name: 'Kamal Haasan', image: 'https://i.pinimg.com/474x/d4/e5/f6/d4e5f6d4e5f6d4e5f6d4e5f6d4e5f6.jpg' },
-  { name: 'Prabhas', image: 'https://i.pinimg.com/474x/g7/h8/i9/g7h8i9g7h8i9g7h8i9g7h8i9g7h8i9.jpg' },
-  { name: 'Mahesh Babu', image: 'https://i.pinimg.com/474x/j0/k1/l2/j0k1l2j0k1l2j0k1l2j0k1l2j0k1l2.jpg' },
-  { name: 'Ram Charan', image: 'https://i.pinimg.com/474x/m3/n4/o5/m3n4o5m3n4o5m3n4o5m3n4o5m3n4o5.jpg' },
-  { name: 'Yash', image: 'https://i.pinimg.com/474x/p6/q7/r8/p6q7r8p6q7r8p6q7r8p6q7r8p6q7r8.jpg' },
-  { name: 'Allu Arjun', image: 'https://i.pinimg.com/474x/s9/t0/u1/s9t0u1s9t0u1s9t0u1s9t0u1s9t0u1.jpg' },
-  { name: 'Suriya', image: 'https://i.pinimg.com/474x/v2/w3/x4/v2w3x4v2w3x4v2w3x4v2w3x4v2w3x4.jpg' },
-  { name: 'Chiyaan Vikram', image: 'https://i.pinimg.com/474x/y5/z6/a7/y5z6a7y5z6a7y5z6a7y5z6a7y5z6a7.jpg' },
-  { name: 'Dhanush', image: 'https://i.pinimg.com/474x/b8/c9/d0/b8c9d0b8c9d0b8c9d0b8c9d0b8c9d0.jpg' },
-  { name: 'Ranveer Singh', image: 'https://i.pinimg.com/474x/e1/f2/g3/e1f2g3e1f2g3e1f2g3e1f2g3e1f2g3.jpg' },
-  { name: 'Hrithik Roshan', image: 'https://i.pinimg.com/474x/h4/i5/j6/h4i5j6h4i5j6h4i5j6h4i5j6h4i5j6.jpg' },
-  { name: 'Akshay Kumar', image: 'https://i.pinimg.com/474x/k7/l8/m9/k7l8m9k7l8m9k7l8m9k7l8m9k7l8m9.jpg' },
-  { name: 'Shah Rukh Khan', image: 'https://i.pinimg.com/474x/n0/o1/p2/n0o1p2n0o1p2n0o1p2n0o1p2n0o1p2.jpg' },
-  { name: 'Salman Khan', image: 'https://i.pinimg.com/474x/q3/r4/s5/q3r4s5q3r4s5q3r4s5q3r4s5q3r4s5.jpg' },
-  { name: 'Aamir Khan', image: 'https://i.pinimg.com/474x/t6/u7/v8/t6u7v8t6u7v8t6u7v8t6u7v8t6u7v8.jpg' }
+  { name: 'Rajinikanth', image: 'https://via.placeholder.com/220x280/FF6B6B/FFFFFF?text=Rajinikanth' },
+  { name: 'Kamal Haasan', image: 'https://via.placeholder.com/220x280/4ECDC4/FFFFFF?text=Kamal' },
+  { name: 'Prabhas', image: 'https://via.placeholder.com/220x280/FFE66D/000000?text=Prabhas' },
+  { name: 'Mahesh Babu', image: 'https://via.placeholder.com/220x280/95E1D3/FFFFFF?text=Mahesh' },
+  { name: 'Ram Charan', image: 'https://via.placeholder.com/220x280/F38181/FFFFFF?text=Ram+Charan' },
+  { name: 'Yash', image: 'https://via.placeholder.com/220x280/AA96DA/FFFFFF?text=Yash' },
+  { name: 'Allu Arjun', image: 'https://via.placeholder.com/220x280/FCBAD3/FFFFFF?text=Allu+Arjun' },
+  { name: 'Suriya', image: 'https://via.placeholder.com/220x280/A8D8EA/FFFFFF?text=Suriya' },
+  { name: 'Chiyaan Vikram', image: 'https://via.placeholder.com/220x280/FF9999/FFFFFF?text=Vikram' },
+  { name: 'Dhanush', image: 'https://via.placeholder.com/220x280/99CCFF/FFFFFF?text=Dhanush' },
+  { name: 'Ranveer Singh', image: 'https://via.placeholder.com/220x280/99FF99/000000?text=Ranveer' },
+  { name: 'Hrithik Roshan', image: 'https://via.placeholder.com/220x280/FFCC99/000000?text=Hrithik' },
+  { name: 'Akshay Kumar', image: 'https://via.placeholder.com/220x280/FF99CC/FFFFFF?text=Akshay' },
+  { name: 'Shah Rukh Khan', image: 'https://via.placeholder.com/220x280/CC99FF/FFFFFF?text=SRK' },
+  { name: 'Salman Khan', image: 'https://via.placeholder.com/220x280/99FFCC/000000?text=Salman' },
+  { name: 'Aamir Khan', image: 'https://via.placeholder.com/220x280/FFFF99/000000?text=Aamir' }
 ];
 
 function getRandomActor(exclude: string[]) {

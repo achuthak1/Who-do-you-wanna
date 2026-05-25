@@ -3,22 +3,22 @@ import styles from "../styles/battle.module.css";
 import Link from 'next/link';
 
 const ACTRESSES_DATA = [
-  { name: 'Nayanthara', image: 'https://i.pinimg.com/474x/c4/fd/f8/c4fdf8c4e7d8c4e7d8c4e7d8c4e7d8c4.jpg' },
-  { name: 'Samantha Ruth Prabhu', image: 'https://i.pinimg.com/474x/a1/b2/c3/a1b2c3a1b2c3a1b2c3a1b2c3a1b2c3.jpg' },
-  { name: 'Anushka Shetty', image: 'https://i.pinimg.com/474x/d4/e5/f6/d4e5f6d4e5f6d4e5f6d4e5f6d4e5f6.jpg' },
-  { name: 'Kajal Aggarwal', image: 'https://i.pinimg.com/474x/g7/h8/i9/g7h8i9g7h8i9g7h8i9g7h8i9g7h8i9.jpg' },
-  { name: 'Tamannaah Bhatia', image: 'https://i.pinimg.com/474x/j0/k1/l2/j0k1l2j0k1l2j0k1l2j0k1l2j0k1l2.jpg' },
-  { name: 'Pooja Hegde', image: 'https://i.pinimg.com/474x/m3/n4/o5/m3n4o5m3n4o5m3n4o5m3n4o5m3n4o5.jpg' },
-  { name: 'Rashmika Mandanna', image: 'https://i.pinimg.com/474x/p6/q7/r8/p6q7r8p6q7r8p6q7r8p6q7r8p6q7r8.jpg' },
-  { name: 'Amala Paul', image: 'https://i.pinimg.com/474x/s9/t0/u1/s9t0u1s9t0u1s9t0u1s9t0u1s9t0u1.jpg' },
-  { name: 'Alia Bhatt', image: 'https://i.pinimg.com/474x/v2/w3/x4/v2w3x4v2w3x4v2w3x4v2w3x4v2w3x4.jpg' },
-  { name: 'Deepika Padukone', image: 'https://i.pinimg.com/474x/y5/z6/a7/y5z6a7y5z6a7y5z6a7y5z6a7y5z6a7.jpg' },
-  { name: 'Vidya Balan', image: 'https://i.pinimg.com/474x/b8/c9/d0/b8c9d0b8c9d0b8c9d0b8c9d0b8c9d0.jpg' },
-  { name: 'Shraddha Kapoor', image: 'https://i.pinimg.com/474x/e1/f2/g3/e1f2g3e1f2g3e1f2g3e1f2g3e1f2g3.jpg' },
-  { name: 'Katrina Kaif', image: 'https://i.pinimg.com/474x/h4/i5/j6/h4i5j6h4i5j6h4i5j6h4i5j6h4i5j6.jpg' },
-  { name: 'Priyanka Chopra', image: 'https://i.pinimg.com/474x/k7/l8/m9/k7l8m9k7l8m9k7l8m9k7l8m9k7l8m9.jpg' },
-  { name: 'Aishwarya Rai', image: 'https://i.pinimg.com/474x/n0/o1/p2/n0o1p2n0o1p2n0o1p2n0o1p2n0o1p2.jpg' },
-  { name: 'Mallika Sherawat', image: 'https://i.pinimg.com/474x/q3/r4/s5/q3r4s5q3r4s5q3r4s5q3r4s5q3r4s5.jpg' }
+  { name: 'Nayanthara', image: 'https://via.placeholder.com/220x280/FF6B6B/FFFFFF?text=Nayanthara' },
+  { name: 'Samantha Ruth Prabhu', image: 'https://via.placeholder.com/220x280/4ECDC4/FFFFFF?text=Samantha' },
+  { name: 'Anushka Shetty', image: 'https://via.placeholder.com/220x280/FFE66D/000000?text=Anushka' },
+  { name: 'Kajal Aggarwal', image: 'https://via.placeholder.com/220x280/95E1D3/FFFFFF?text=Kajal' },
+  { name: 'Tamannaah Bhatia', image: 'https://via.placeholder.com/220x280/F38181/FFFFFF?text=Tamannaah' },
+  { name: 'Pooja Hegde', image: 'https://via.placeholder.com/220x280/AA96DA/FFFFFF?text=Pooja' },
+  { name: 'Rashmika Mandanna', image: 'https://via.placeholder.com/220x280/FCBAD3/FFFFFF?text=Rashmika' },
+  { name: 'Amala Paul', image: 'https://via.placeholder.com/220x280/A8D8EA/FFFFFF?text=Amala' },
+  { name: 'Alia Bhatt', image: 'https://via.placeholder.com/220x280/FF9999/FFFFFF?text=Alia' },
+  { name: 'Deepika Padukone', image: 'https://via.placeholder.com/220x280/99CCFF/FFFFFF?text=Deepika' },
+  { name: 'Vidya Balan', image: 'https://via.placeholder.com/220x280/99FF99/000000?text=Vidya' },
+  { name: 'Shraddha Kapoor', image: 'https://via.placeholder.com/220x280/FFCC99/000000?text=Shraddha' },
+  { name: 'Katrina Kaif', image: 'https://via.placeholder.com/220x280/FF99CC/FFFFFF?text=Katrina' },
+  { name: 'Priyanka Chopra', image: 'https://via.placeholder.com/220x280/CC99FF/FFFFFF?text=Priyanka' },
+  { name: 'Aishwarya Rai', image: 'https://via.placeholder.com/220x280/99FFCC/000000?text=Aishwarya' },
+  { name: 'Mallika Sherawat', image: 'https://via.placeholder.com/220x280/FFFF99/000000?text=Mallika' }
 ];
 
 function getRandomActress(exclude: string[]) {
