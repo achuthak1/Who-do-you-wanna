@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+
+.bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(120deg, #ff4e50, #1cb5e0, #f9d423, #43cea2, #185a9d);
+  background-size: 400% 400%;
+  animation: gradientMove 16s ease-in-out infinite;
+  overflow: hidden;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.fruitEmoji {
+  position: absolute;
+  font-size: 3.5rem;
+  opacity: 0.13;
+  pointer-events: none;
+  animation: float 12s linear infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-40px) scale(1.1); }
+  100% { transform: translateY(0) scale(1); }
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Orbitron', 'Montserrat', 'Segoe UI', Arial, sans-serif;
+  text-align: center;
+}
+
+.card {
+  background: rgba(255,255,255,0.13);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 32px;
+  border: 1.5px solid rgba(255,255,255,0.18);
+  padding: 48px 36px 36px 36px;
+  margin-top: 24px;
+  min-width: 340px;
+  max-width: 90vw;
+}
+
+.title {
+  font-size: 2.7rem;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+  color: #fff;
+  text-shadow: 0 0 16px #1cb5e0, 0 0 32px #ff4e50;
+  font-family: 'Orbitron', 'Montserrat', 'Segoe UI', Arial, sans-serif;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #fff;
+  text-shadow: 0 0 8px #43cea2;
+}
+
+.battle {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  margin-top: 40px;
+}
+
+.fruitBtn {
+  font-size: 1.5rem;
+  padding: 28px 48px;
+  border: none;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.18);
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 0 16px #1cb5e0, 0 0 32px #ff4e50;
+  transition: transform 0.15s, box-shadow 0.15s, background 0.15s;
+  outline: none;
+  font-family: inherit;
+  position: relative;
+  overflow: hidden;
+}
+
+.fruitBtn:hover {
+  transform: scale(1.08) rotate(-2deg);
+  box-shadow: 0 0 32px #f9d423, 0 0 64px #43cea2;
+  background: rgba(255,255,255,0.28);
+}
+
+.vs {
+  font-size: 2.2rem;
+  align-self: center;
+  color: #fff;
+  text-shadow: 0 0 12px #43cea2;
+}
+
+.favorite {
+  font-size: 2.1rem;
+  margin: 40px 0 0 0;
+  color: #fff;
+  text-shadow: 0 0 16px #43cea2, 0 0 32px #ff4e50;
+}
