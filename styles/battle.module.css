@@ -142,9 +142,7 @@
   height: 280px;
   border: none;
   border-radius: 18px;
-  background-size: cover;
-  background-position: center;
-  background-color: rgba(255,255,255,0.2);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   cursor: pointer;
   box-shadow: 0 0 16px #1cb5e0, 0 0 32px #ff4e50;
   transition: transform 0.15s, box-shadow 0.15s, filter 0.15s;
@@ -154,6 +152,8 @@
   display: flex;
   align-items: flex-end;
   justify-content: center;
+  background-size: cover;
+  background-position: center;
 }
 
 .actressBtn::before {

@@ -130,7 +130,6 @@ export default function ActressesBattle() {
               <div className={styles.battle}>
                 <button 
                   className={styles.actressBtn}
-                  style={{ backgroundImage: `url('${left?.image}')` }}
                   onClick={() => handleClick('left')}
                 >
                   <div className={styles.actressName}>{left?.name}</div>
@@ -138,7 +137,6 @@ export default function ActressesBattle() {
                 <span className={styles.vs}>vs</span>
                 <button 
                   className={styles.actressBtn}
-                  style={{ backgroundImage: `url('${right?.image}')` }}
                   onClick={() => handleClick('right')}
                 >
                   <div className={styles.actressName}>{right?.name}</div>

@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from "../styles/battle.module.css";
 import { useRouter } from 'next/router';
 
 export default function GenderSelection() {
   const router = useRouter();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const handleWoman = () => {
     router.push('/actresses');
@@ -12,6 +17,8 @@ export default function GenderSelection() {
   const handleMan = () => {
     router.push('/actors');
   };
+
+  if (!mounted) return null;
 
   const fruitEmojis = ['✨', '🎬', '🎥', '⭐', '🌟', '👑', '🎭', '💫', '🎪', '🎨', '🌹', '💎'];
   const floatingFruits = Array.from({ length: 12 }, (_, i) => ({
