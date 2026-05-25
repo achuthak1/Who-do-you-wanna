@@ -1,23 +1,24 @@
 import React, { useState, useEffect } from 'react';
-import styles from "../styles/fruits.module.css";
+import styles from "../styles/battle.module.css";
+import Link from 'next/link';
 
 const ACTRESSES_DATA = [
-  { name: 'Nayanthara', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Nayanthara_2018.jpg/330px-Nayanthara_2018.jpg' },
-  { name: 'Samantha Ruth Prabhu', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Samantha_Ruth_Prabhu_at_Mirchi_Music_Awards_2013.jpg/330px-Samantha_Ruth_Prabhu_at_Mirchi_Music_Awards_2013.jpg' },
-  { name: 'Anushka Shetty', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Anushka_Shetty.jpg/330px-Anushka_Shetty.jpg' },
-  { name: 'Kajal Aggarwal', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Kajal_Aggarwal_at_SIIMA_Awards_2014.jpg/330px-Kajal_Aggarwal_at_SIIMA_Awards_2014.jpg' },
-  { name: 'Tamannaah Bhatia', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Tamannaah_Bhatia_at_Baahubali_2_event.jpg/330px-Tamannaah_Bhatia_at_Baahubali_2_event.jpg' },
-  { name: 'Pooja Hegde', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Pooja_Hegde_at_IIFA_Utsavam_2016.jpg/330px-Pooja_Hegde_at_IIFA_Utsavam_2016.jpg' },
-  { name: 'Rashmika Mandanna', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Rashmika_Mandanna_at_IIFA_Utsavam_2019.jpg/330px-Rashmika_Mandanna_at_IIFA_Utsavam_2019.jpg' },
-  { name: 'Amala Paul', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Amala_Paul_at_IIFA_Utsavam_2016.jpg/330px-Amala_Paul_at_IIFA_Utsavam_2016.jpg' },
-  { name: 'Alia Bhatt', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Alia_Bhatt_walks_the_ramp_during_FDCI_India_Couture_Week_2015.jpg/330px-Alia_Bhatt_walks_the_ramp_during_FDCI_India_Couture_Week_2015.jpg' },
-  { name: 'Deepika Padukone', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Deepika_Padukone_2014.jpg/330px-Deepika_Padukone_2014.jpg' },
-  { name: 'Vidya Balan', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Vidya_Balan_at_the_IIFA_Awards_2015.jpg/330px-Vidya_Balan_at_the_IIFA_Awards_2015.jpg' },
-  { name: 'Shraddha Kapoor', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Shraddha_Kapoor_at_IIFA_2016.jpg/330px-Shraddha_Kapoor_at_IIFA_2016.jpg' },
-  { name: 'Katrina Kaif', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Katrina_Kaif_at_IIFA_2016.jpg/330px-Katrina_Kaif_at_IIFA_2016.jpg' },
-  { name: 'Priyanka Chopra', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Priyanka_Chopra_at_the_Met_Gala_2019.jpg/330px-Priyanka_Chopra_at_the_Met_Gala_2019.jpg' },
-  { name: 'Aishwarya Rai', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Aishwarya_Rai_at_IIFA_2013.jpg/330px-Aishwarya_Rai_at_IIFA_2013.jpg' },
-  { name: 'Mallika Sherawat', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Mallika_Sherawat_2014.jpg/330px-Mallika_Sherawat_2014.jpg' }
+  { name: 'Nayanthara', image: 'https://i.pinimg.com/474x/c4/fd/f8/c4fdf8c4e7d8c4e7d8c4e7d8c4e7d8c4.jpg' },
+  { name: 'Samantha Ruth Prabhu', image: 'https://i.pinimg.com/474x/a1/b2/c3/a1b2c3a1b2c3a1b2c3a1b2c3a1b2c3.jpg' },
+  { name: 'Anushka Shetty', image: 'https://i.pinimg.com/474x/d4/e5/f6/d4e5f6d4e5f6d4e5f6d4e5f6d4e5f6.jpg' },
+  { name: 'Kajal Aggarwal', image: 'https://i.pinimg.com/474x/g7/h8/i9/g7h8i9g7h8i9g7h8i9g7h8i9g7h8i9.jpg' },
+  { name: 'Tamannaah Bhatia', image: 'https://i.pinimg.com/474x/j0/k1/l2/j0k1l2j0k1l2j0k1l2j0k1l2j0k1l2.jpg' },
+  { name: 'Pooja Hegde', image: 'https://i.pinimg.com/474x/m3/n4/o5/m3n4o5m3n4o5m3n4o5m3n4o5m3n4o5.jpg' },
+  { name: 'Rashmika Mandanna', image: 'https://i.pinimg.com/474x/p6/q7/r8/p6q7r8p6q7r8p6q7r8p6q7r8p6q7r8.jpg' },
+  { name: 'Amala Paul', image: 'https://i.pinimg.com/474x/s9/t0/u1/s9t0u1s9t0u1s9t0u1s9t0u1s9t0u1.jpg' },
+  { name: 'Alia Bhatt', image: 'https://i.pinimg.com/474x/v2/w3/x4/v2w3x4v2w3x4v2w3x4v2w3x4v2w3x4.jpg' },
+  { name: 'Deepika Padukone', image: 'https://i.pinimg.com/474x/y5/z6/a7/y5z6a7y5z6a7y5z6a7y5z6a7y5z6a7.jpg' },
+  { name: 'Vidya Balan', image: 'https://i.pinimg.com/474x/b8/c9/d0/b8c9d0b8c9d0b8c9d0b8c9d0b8c9d0.jpg' },
+  { name: 'Shraddha Kapoor', image: 'https://i.pinimg.com/474x/e1/f2/g3/e1f2g3e1f2g3e1f2g3e1f2g3e1f2g3.jpg' },
+  { name: 'Katrina Kaif', image: 'https://i.pinimg.com/474x/h4/i5/j6/h4i5j6h4i5j6h4i5j6h4i5j6h4i5j6.jpg' },
+  { name: 'Priyanka Chopra', image: 'https://i.pinimg.com/474x/k7/l8/m9/k7l8m9k7l8m9k7l8m9k7l8m9k7l8m9.jpg' },
+  { name: 'Aishwarya Rai', image: 'https://i.pinimg.com/474x/n0/o1/p2/n0o1p2n0o1p2n0o1p2n0o1p2n0o1p2.jpg' },
+  { name: 'Mallika Sherawat', image: 'https://i.pinimg.com/474x/q3/r4/s5/q3r4s5q3r4s5q3r4s5q3r4s5q3r4s5.jpg' }
 ];
 
 function getRandomActress(exclude: string[]) {
@@ -25,14 +26,13 @@ function getRandomActress(exclude: string[]) {
   return available[Math.floor(Math.random() * available.length)] || null;
 }
 
-export default function FruitsBattle() {
+export default function ActressesBattle() {
   const [selected, setSelected] = useState<string[]>([]);
   const [left, setLeft] = useState<typeof ACTRESSES_DATA[0] | null>(null);
   const [right, setRight] = useState<typeof ACTRESSES_DATA[0] | null>(null);
   const [count, setCount] = useState(0);
   const [favorite, setFavorite] = useState<string | null>(null);
 
-  // Only initialize actresses on the client to avoid hydration mismatch
   useEffect(() => {
     if (left === null && right === null) {
       const first = getRandomActress([]);
@@ -40,7 +40,6 @@ export default function FruitsBattle() {
       setLeft(first || null);
       setRight(second || null);
     }
-    // eslint-disable-next-line
   }, []);
 
   const handleClick = (side: 'left' | 'right') => {
@@ -54,12 +53,9 @@ export default function FruitsBattle() {
       setFavorite(winner);
       return;
     }
-    // Exclude all previously selected actresses and the current winner
     const exclude = [...newSelected, loser];
     let newActress = getRandomActress(exclude);
-    // If all actresses are exhausted, allow repeats (fallback)
     if (!newActress) {
-      // Only the winner and loser left, just swap
       const loserData = ACTRESSES_DATA.find(a => a.name === loser);
       newActress = loserData || null;
     }
@@ -70,13 +66,13 @@ export default function FruitsBattle() {
     }
   };
 
-  // Move the conditional return to the top of the component body
   if (left === null || right === null) {
-    // Prevent rendering until fruits are initialized
     return (
       <div className={styles.container}>
-        <h1 className={styles.title}>🍉 Fruit Battle 🍍</h1>
-        <p className={styles.subtitle}>Loading...</p>
+        <div className={styles.card}>
+          <h1 className={styles.title}>Who Do You Wanna?</h1>
+          <p className={styles.subtitle}>Loading...</p>
+        </div>
       </div>
     );
   }
@@ -117,8 +113,11 @@ export default function FruitsBattle() {
         ))}
       </div>
       <div className={styles.container}>
+        <Link href="/" style={{ position: 'absolute', top: 20, left: 20, zIndex: 10 }}>
+          <button style={{ padding: '8px 16px', backgroundColor: '#ff4e50', color: '#fff', border: 'none', borderRadius: '8px', cursor: 'pointer' }}>← Back</button>
+        </Link>
         <div className={styles.card}>
-          <h1 className={styles.title}>Who Do You Wanna?</h1>
+          <h1 className={styles.title}>👩 Actress Battle 👩</h1>
           {favorite ? (
             <div>
               <h2 className={styles.subtitle}>Your favorite actress is:</h2>

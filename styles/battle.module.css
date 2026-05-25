@@ -78,6 +78,43 @@
   margin-top: 40px;
 }
 
+.genderBattle {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 40px;
+  flex-direction: column;
+}
+
+.genderBtn {
+  padding: 24px 48px;
+  border: none;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.18);
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 0 16px #1cb5e0, 0 0 32px #ff4e50;
+  transition: transform 0.15s, box-shadow 0.15s, background 0.15s;
+  outline: none;
+  font-family: inherit;
+  font-size: 1.3rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.genderBtn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 32px #f9d423, 0 0 64px #43cea2;
+  background: rgba(255,255,255,0.28);
+}
+
+.genderEmoji {
+  font-size: 2rem;
+}
+
 .fruitBtn {
   font-size: 1.5rem;
   padding: 28px 48px;
@@ -107,6 +144,7 @@
   border-radius: 18px;
   background-size: cover;
   background-position: center;
+  background-color: rgba(255,255,255,0.2);
   cursor: pointer;
   box-shadow: 0 0 16px #1cb5e0, 0 0 32px #ff4e50;
   transition: transform 0.15s, box-shadow 0.15s, filter 0.15s;
